@@ -1,4 +1,4 @@
-# Senior-Design-2018
+# Senior Design 2018
 Code used in my Senior Design project, for IBM Operational Awareness. Using historical data, we (will be) provide a tool that allows a user to gain insight into a mainframe job's average length.
 
 # rmds-strip files
