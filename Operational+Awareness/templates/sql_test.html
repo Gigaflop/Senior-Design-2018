@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	This is the test page for SQL operations. <br/>
+
+	<ul class=entries>
+	{% for entry in entries %}
+		<li> <a href="{{ url_for('sql_job', jobname=entry) }}" >{{entry|safe}}</a></li>
+	{% else %}
+		<li><em>Unbelievable. No entries here so far.</em></li>
+	{% endfor %}
+	</ul>
+	
+<!--	
+  <ul class=results>
+  {% for row in results %}
+    <li> {{row|safe}}</li>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+  
+  <ul class=names>
+  {% for name in names %}
+	<li> {{name|safe}} </li>
+	{% else %}
+		No names were found, or something else is happening.
+	{% endfor %}
+  </ul>
+ --> 
+  
+{% endblock %}

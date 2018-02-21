@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block body %}
+
+	This is where I test presentation for individual jobs in the MySQL table.
+	<br/>
+	<p class=hour_avgs>
+		avg sec elapsed by starting hour: <br/>
+		{{ hour_avg | safe }}
+		<br/>
+		Avg sec elapsed by MySQL QUARTER(): <br/>
+		{{ by_quarter | safe }}
+		<br/>
+		Avg over all Mondays: <br/>
+		{{monday|safe}}
+		
+		<br/>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+		google.charts.load("current", {packages:['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+		  var data = google.visualization.arrayToDataTable([
+			["Financial Quarter", "avg seconds duration", { role: "style" } ],
+			["q1", {{quarter[0] | safe}}, "lightblue"],
+			["q2", {{quarter[1] | safe}}, "blue"],
+			["q3", {{quarter[2] | safe}}, "lightblue"],
+			["q4", {{quarter[3] | safe}}, "blue"]
+			]);
+
+		var view = new google.visualization.DataView(data);
+				view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+				var options = {
+				title: "{{jobName | safe}} Average seconds elapsed by Financial Quarter",
+				//width: 600,
+				//height: 400,
+				bar: {groupWidth: "95%"},
+				legend: { position: "none" },
+			};
+		  var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+		  chart.draw(view, options);
+			}
+		</script>
+		<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+		<br/>
+	
+	
+	
+		<br/>
+		Python took {{ timer | safe }} seconds.
+		<br/>
+	</p>
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	<br/>
+	<ul class=alltime>
+		<li>autoinc id, sec_elapsed, t_started, weekday, run_date</li>
+	{% for entry in alltime %}
+		<li>{{entry|safe}}</li>
+	{% else %}
+		<em>Nothing here yet..?</em>
+	{% endfor %}
+	
+	</ul>
+	
+	<br/>
+	
+
+
+
+{% endblock %}

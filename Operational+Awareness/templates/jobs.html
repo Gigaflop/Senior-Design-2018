@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block body %}
+  
+    This is the homepage. Very little to show so far.
+	
+  <ul class=entries>
+  {% for entry in entries %}
+    <li> <a href="{{url_for('mysql_test')}}/{{ entry|safe }}"> {{entry|safe}}</a>
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}
