@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "version": "",
+  "description": "This application demonstrates a simple, reusable Python web application based on the [Flask microframework](http://flask.pocoo.org/).",
+  "dependencies": {
+    "carbon": "^0.5.0",
+    "components": "^0.1.0"
+  }
+}

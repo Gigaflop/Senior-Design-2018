@@ -1,8 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<!--
+
 	This is where I test presentation for individual jobs in the MySQL table.
 	TEST
 	<br/>
@@ -15,32 +13,9 @@
 		<br/>
 		Avg over all Mondays: <br/>
 		{{monday|safe}}
--->
+		
 		<br/>
-		<!--
-		This is where I try and implement the Accordion container from Carbon
-		-->
-		<!--
-		<ul data-accordion class="bx--accordion">
-			<li data-accordion-item class="bx--accordion__item">
-				<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane1">
-					<svg class="bx--accordion__arrow" width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
-						<path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
-					</svg>
-					<p class="bx--accordion__title">Section 1 title </p>
-					</button>
-				<div id="pane1" class="bx--accordion__content">
-				<p>
-      
-		-->
-		<!--
-		<button onclick="myFunction('by_quarter')" class="w3-button w3-block w3-left-align">
-			Performance By Quarter</button>
-		
-		<div id="by_quarter" class="w3-hide">
-		
-		asdfjlhljkadhfhfad
-		-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript">
 		google.charts.load("current", {packages:['corechart']});
 		google.charts.setOnLoadCallback(drawChart);
@@ -80,36 +55,12 @@
 		</script>
 		<br/>
 		
-		<div id="columnchart_values" style="width: 900px; height: 300px;" > </div>
+		<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
 		<br/>
-		<!--
-			</p>
-			</div>
-		</li>
-		</div>-->
-		
-		<!--
-		<li data-accordion-item class="bx--accordion__item">
-			<button class="bx--accordion__heading" aria-expanded="false" aria-controls="pane4">
-				<svg class="bx--accordion__arrow" width="8" height="12" viewBox="0 0 8 12" fill-rule="evenodd">
-					<path d="M0 10.6L4.7 6 0 1.4 1.4 0l6.1 6-6.1 6z"></path>
-				</svg>
-				<p class="bx--accordion__title">Section 4 title</p>
-			</button>
-			<div id="pane2" class="bx--accordion__content">
-			<p>
-		-->
 		<!-- 
 		Sam's second javascript graph
 		------doc-------
 		This is a line graph for one job where the y axis is the runtime in seconds and the x axis is days of the month (1-30). It uses the average runtimes for a job on each day of a given month.
-		-->
-		
-		<!--
-		<button onclick="myFunc('by_day')" class="w3-button">
-		Performance by Day of the Month
-		</button>
-		<div id="by_day" class="w3-hide">
 		-->
 		<script type="text/javascript">
 			google.charts.load('current', {packages: ['corechart', 'line']});
@@ -158,23 +109,16 @@
 				  chart.draw(data, options);
 				}		
 		</script>
-		<div id="chart_div" style="width: 900px; height: 300px;" ></div>
-		<!--hdfdhdf
-		
-		</div>-->
-		<!--
+		<div id="chart_div" style="width: 900px; height: 300px;"></div>
 		<br/>
-					</p>
-				</div>
-			</li>
 	
-		</ul>
-		-->
-		
+	
+	
+		<br/>
+		Python took {{ timer | safe }} seconds.
+		<br/>
 	</p>
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	<br/>
-		Python took {{ timer | safe }} seconds.
 	<br/>
 	<ul class=alltime>
 		<li>autoinc id, sec_elapsed, t_started, weekday, run_date</li>

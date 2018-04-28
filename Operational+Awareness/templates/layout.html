@@ -1,13 +1,25 @@
 <!doctype html>
-<title>Flask Test App</title>
+<title>Operational Awareness</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
 <div class=page>
-  <h1>Flask Test Application</h1>
-  <div class=metanav>
-	<a href="{{ url_for('home') }}">Home</a>
-    <a href="{{ url_for('api_info') }}">API</a>
-	<a href="{{ url_for('sql_jobs') }}">MySQL Test</a>
-  </div>
+  <h1>Operational Awareness</h1>
+  <form>
+	<div class=navButtons>
+		<input class="LinkButton" type="button" value="Home" onclick="window.location.href='{{ url_for('home') }}'"/>
+		<input class="LinkButton" type="button" value="Job List" onclick="window.location.href='{{ url_for('sql_jobs') }}'"/>
+	</div>
+  </form>
   <br/>
   {% block body %}{% endblock %}
+	<script src="{{ url_for('static', filename='node_modules/carbon/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/cohesion/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/drip/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/electron/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/fsagent/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/harbor/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/sherlock/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/tea-concat/index.js')}}"></script>
+	<script src="{{ url_for('static', filename='node_modules/components/GruntFile.js')}}"></script>
 </div>
+
