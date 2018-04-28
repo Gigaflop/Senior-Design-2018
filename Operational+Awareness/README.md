@@ -1,6 +1,7 @@
 # Python Flask application
 
 This application runs the Flask instance that powers the web application.
+It is currently missing the 'static' folder, as it contains many Node files, and Github doesn't want to take them all at once.
 
 ## Run the app locally
 
